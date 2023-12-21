@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1295043C2B342F9C008554CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295043B2B342F9C008554CE /* AppDelegate.swift */; };
+		1295043E2B342F9C008554CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295043D2B342F9C008554CE /* SceneDelegate.swift */; };
+		129504402B342F9C008554CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295043F2B342F9C008554CE /* ViewController.swift */; };
+		129504432B342F9C008554CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 129504412B342F9C008554CE /* Main.storyboard */; };
+		129504462B342F9C008554CE /* DrAppoint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 129504442B342F9C008554CE /* DrAppoint.xcdatamodeld */; };
+		129504482B342F9D008554CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 129504472B342F9D008554CE /* Assets.xcassets */; };
+		1295044B2B342F9D008554CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 129504492B342F9D008554CE /* LaunchScreen.storyboard */; };
+		129504562B342F9E008554CE /* DrAppointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129504552B342F9E008554CE /* DrAppointTests.swift */; };
+		129504602B342F9E008554CE /* DrAppointUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295045F2B342F9E008554CE /* DrAppointUITests.swift */; };
+		129504622B342F9E008554CE /* DrAppointUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129504612B342F9E008554CE /* DrAppointUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		129504522B342F9E008554CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 129504302B342F9C008554CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 129504372B342F9C008554CE;
+			remoteInfo = DrAppoint;
+		};
+		1295045C2B342F9E008554CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 129504302B342F9C008554CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 129504372B342F9C008554CE;
+			remoteInfo = DrAppoint;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		129504382B342F9C008554CE /* DrAppoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrAppoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1295043B2B342F9C008554CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1295043D2B342F9C008554CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1295043F2B342F9C008554CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		129504422B342F9C008554CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		129504452B342F9C008554CE /* DrAppoint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrAppoint.xcdatamodel; sourceTree = "<group>"; };
+		129504472B342F9D008554CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1295044A2B342F9D008554CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1295044C2B342F9D008554CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		129504512B342F9E008554CE /* DrAppointTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrAppointTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		129504552B342F9E008554CE /* DrAppointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrAppointTests.swift; sourceTree = "<group>"; };
+		1295045B2B342F9E008554CE /* DrAppointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrAppointUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1295045F2B342F9E008554CE /* DrAppointUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrAppointUITests.swift; sourceTree = "<group>"; };
+		129504612B342F9E008554CE /* DrAppointUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrAppointUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		129504352B342F9C008554CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1295044E2B342F9E008554CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		129504582B342F9E008554CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1295042F2B342F9C008554CE = {
+			isa = PBXGroup;
+			children = (
+				1295043A2B342F9C008554CE /* DrAppoint */,
+				129504542B342F9E008554CE /* DrAppointTests */,
+				1295045E2B342F9E008554CE /* DrAppointUITests */,
+				129504392B342F9C008554CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		129504392B342F9C008554CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				129504382B342F9C008554CE /* DrAppoint.app */,
+				129504512B342F9E008554CE /* DrAppointTests.xctest */,
+				1295045B2B342F9E008554CE /* DrAppointUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1295043A2B342F9C008554CE /* DrAppoint */ = {
+			isa = PBXGroup;
+			children = (
+				1295043B2B342F9C008554CE /* AppDelegate.swift */,
+				1295043D2B342F9C008554CE /* SceneDelegate.swift */,
+				1295043F2B342F9C008554CE /* ViewController.swift */,
+				129504412B342F9C008554CE /* Main.storyboard */,
+				129504472B342F9D008554CE /* Assets.xcassets */,
+				129504492B342F9D008554CE /* LaunchScreen.storyboard */,
+				1295044C2B342F9D008554CE /* Info.plist */,
+				129504442B342F9C008554CE /* DrAppoint.xcdatamodeld */,
+			);
+			path = DrAppoint;
+			sourceTree = "<group>";
+		};
+		129504542B342F9E008554CE /* DrAppointTests */ = {
+			isa = PBXGroup;
+			children = (
+				129504552B342F9E008554CE /* DrAppointTests.swift */,
+			);
+			path = DrAppointTests;
+			sourceTree = "<group>";
+		};
+		1295045E2B342F9E008554CE /* DrAppointUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1295045F2B342F9E008554CE /* DrAppointUITests.swift */,
+				129504612B342F9E008554CE /* DrAppointUITestsLaunchTests.swift */,
+			);
+			path = DrAppointUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		129504372B342F9C008554CE /* DrAppoint */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 129504652B342F9E008554CE /* Build configuration list for PBXNativeTarget "DrAppoint" */;
+			buildPhases = (
+				129504342B342F9C008554CE /* Sources */,
+				129504352B342F9C008554CE /* Frameworks */,
+				129504362B342F9C008554CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DrAppoint;
+			productName = DrAppoint;
+			productReference = 129504382B342F9C008554CE /* DrAppoint.app */;
+			productType = "com.apple.product-type.application";
+		};
+		129504502B342F9E008554CE /* DrAppointTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 129504682B342F9E008554CE /* Build configuration list for PBXNativeTarget "DrAppointTests" */;
+			buildPhases = (
+				1295044D2B342F9E008554CE /* Sources */,
+				1295044E2B342F9E008554CE /* Frameworks */,
+				1295044F2B342F9E008554CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				129504532B342F9E008554CE /* PBXTargetDependency */,
+			);
+			name = DrAppointTests;
+			productName = DrAppointTests;
+			productReference = 129504512B342F9E008554CE /* DrAppointTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1295045A2B342F9E008554CE /* DrAppointUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1295046B2B342F9E008554CE /* Build configuration list for PBXNativeTarget "DrAppointUITests" */;
+			buildPhases = (
+				129504572B342F9E008554CE /* Sources */,
+				129504582B342F9E008554CE /* Frameworks */,
+				129504592B342F9E008554CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1295045D2B342F9E008554CE /* PBXTargetDependency */,
+			);
+			name = DrAppointUITests;
+			productName = DrAppointUITests;
+			productReference = 1295045B2B342F9E008554CE /* DrAppointUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		129504302B342F9C008554CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					129504372B342F9C008554CE = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					129504502B342F9E008554CE = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 129504372B342F9C008554CE;
+					};
+					1295045A2B342F9E008554CE = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 129504372B342F9C008554CE;
+					};
+				};
+			};
+			buildConfigurationList = 129504332B342F9C008554CE /* Build configuration list for PBXProject "DrAppoint" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1295042F2B342F9C008554CE;
+			productRefGroup = 129504392B342F9C008554CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				129504372B342F9C008554CE /* DrAppoint */,
+				129504502B342F9E008554CE /* DrAppointTests */,
+				1295045A2B342F9E008554CE /* DrAppointUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		129504362B342F9C008554CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1295044B2B342F9D008554CE /* LaunchScreen.storyboard in Resources */,
+				129504482B342F9D008554CE /* Assets.xcassets in Resources */,
+				129504432B342F9C008554CE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1295044F2B342F9E008554CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		129504592B342F9E008554CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		129504342B342F9C008554CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				129504402B342F9C008554CE /* ViewController.swift in Sources */,
+				1295043C2B342F9C008554CE /* AppDelegate.swift in Sources */,
+				1295043E2B342F9C008554CE /* SceneDelegate.swift in Sources */,
+				129504462B342F9C008554CE /* DrAppoint.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1295044D2B342F9E008554CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				129504562B342F9E008554CE /* DrAppointTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		129504572B342F9E008554CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				129504622B342F9E008554CE /* DrAppointUITestsLaunchTests.swift in Sources */,
+				129504602B342F9E008554CE /* DrAppointUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		129504532B342F9E008554CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 129504372B342F9C008554CE /* DrAppoint */;
+			targetProxy = 129504522B342F9E008554CE /* PBXContainerItemProxy */;
+		};
+		1295045D2B342F9E008554CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 129504372B342F9C008554CE /* DrAppoint */;
+			targetProxy = 1295045C2B342F9E008554CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		129504412B342F9C008554CE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				129504422B342F9C008554CE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		129504492B342F9D008554CE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1295044A2B342F9D008554CE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		129504632B342F9E008554CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		129504642B342F9E008554CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		129504662B342F9E008554CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DrAppoint/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DoctorAppointment.DrAppoint;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		129504672B342F9E008554CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DrAppoint/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DoctorAppointment.DrAppoint;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		129504692B342F9E008554CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DoctorAppointment.DrAppointTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DrAppoint.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DrAppoint";
+			};
+			name = Debug;
+		};
+		1295046A2B342F9E008554CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DoctorAppointment.DrAppointTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DrAppoint.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DrAppoint";
+			};
+			name = Release;
+		};
+		1295046C2B342F9E008554CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DoctorAppointment.DrAppointUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DrAppoint;
+			};
+			name = Debug;
+		};
+		1295046D2B342F9E008554CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DoctorAppointment.DrAppointUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DrAppoint;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		129504332B342F9C008554CE /* Build configuration list for PBXProject "DrAppoint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				129504632B342F9E008554CE /* Debug */,
+				129504642B342F9E008554CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		129504652B342F9E008554CE /* Build configuration list for PBXNativeTarget "DrAppoint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				129504662B342F9E008554CE /* Debug */,
+				129504672B342F9E008554CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		129504682B342F9E008554CE /* Build configuration list for PBXNativeTarget "DrAppointTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				129504692B342F9E008554CE /* Debug */,
+				1295046A2B342F9E008554CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1295046B2B342F9E008554CE /* Build configuration list for PBXNativeTarget "DrAppointUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1295046C2B342F9E008554CE /* Debug */,
+				1295046D2B342F9E008554CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		129504442B342F9C008554CE /* DrAppoint.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				129504452B342F9C008554CE /* DrAppoint.xcdatamodel */,
+			);
+			currentVersion = 129504452B342F9C008554CE /* DrAppoint.xcdatamodel */;
+			path = DrAppoint.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 129504302B342F9C008554CE /* Project object */;
+}
