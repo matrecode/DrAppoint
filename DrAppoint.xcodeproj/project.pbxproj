@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		124CEAD72B34707A0086E1CB /* DoctorLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124CEAD62B34707A0086E1CB /* DoctorLoginVC.swift */; };
 		1295043C2B342F9C008554CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295043B2B342F9C008554CE /* AppDelegate.swift */; };
 		1295043E2B342F9C008554CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295043D2B342F9C008554CE /* SceneDelegate.swift */; };
 		129504402B342F9C008554CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295043F2B342F9C008554CE /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		124CEAD62B34707A0086E1CB /* DoctorLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorLoginVC.swift; sourceTree = "<group>"; };
 		129504382B342F9C008554CE /* DrAppoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrAppoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1295043B2B342F9C008554CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1295043D2B342F9C008554CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		124CEAD42B3451B50086E1CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		124CEAD52B3451C00086E1CB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				124CEAD62B34707A0086E1CB /* DoctorLoginVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		1295042F2B342F9C008554CE = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +118,8 @@
 		1295043A2B342F9C008554CE /* DrAppoint */ = {
 			isa = PBXGroup;
 			children = (
+				124CEAD52B3451C00086E1CB /* Controllers */,
+				124CEAD42B3451B50086E1CB /* Model */,
 				1295043B2B342F9C008554CE /* AppDelegate.swift */,
 				1295043D2B342F9C008554CE /* SceneDelegate.swift */,
 				1295043F2B342F9C008554CE /* ViewController.swift */,
@@ -263,6 +282,7 @@
 			files = (
 				129504402B342F9C008554CE /* ViewController.swift in Sources */,
 				1295043C2B342F9C008554CE /* AppDelegate.swift in Sources */,
+				124CEAD72B34707A0086E1CB /* DoctorLoginVC.swift in Sources */,
 				1295043E2B342F9C008554CE /* SceneDelegate.swift in Sources */,
 				129504462B342F9C008554CE /* DrAppoint.xcdatamodeld in Sources */,
 			);

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +11,93 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DrAppoint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P80-Qg-lNs">
+                                <rect key="frame" x="131" y="369" width="131" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="DOCTOR">
+                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                    <color key="baseBackgroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="2Bq-Lj-h0m" kind="showDetail" id="BsJ-Jm-iC3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8t-MG-fna">
+                                <rect key="frame" x="131" y="436" width="131" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="PATIENT">
+                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                    <color key="baseBackgroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+        </scene>
+        <!--Doctor LoginVC-->
+        <scene sceneID="Tjj-L1-jJn">
+            <objects>
+                <viewController id="2Bq-Lj-h0m" customClass="DoctorLoginVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZjZ-Ho-ef5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOCTOR LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIi-ix-nOj">
+                                <rect key="frame" x="16" y="124.99999999999999" width="361" height="38.333333333333329"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ku6-Zn-UNN">
+                                <rect key="frame" x="16" y="203.33333333333334" width="361" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="BRw-G9-JsK"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Register"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentOutlet:" destination="0Rv-O3-kxR" eventType="valueChanged" id="Ag7-Rb-Cpn"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HXS-YU-IT7"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ku6-Zn-UNN" firstAttribute="top" secondItem="SIi-ix-nOj" secondAttribute="bottom" constant="40" id="0M0-xw-eNp"/>
+                            <constraint firstItem="HXS-YU-IT7" firstAttribute="trailing" secondItem="Ku6-Zn-UNN" secondAttribute="trailing" constant="16" id="HQA-mA-7aB"/>
+                            <constraint firstItem="SIi-ix-nOj" firstAttribute="leading" secondItem="HXS-YU-IT7" secondAttribute="leading" constant="16" id="RYG-vq-jCA"/>
+                            <constraint firstItem="HXS-YU-IT7" firstAttribute="trailing" secondItem="SIi-ix-nOj" secondAttribute="trailing" constant="16" id="VzU-PA-D1H"/>
+                            <constraint firstItem="Ku6-Zn-UNN" firstAttribute="leading" secondItem="HXS-YU-IT7" secondAttribute="leading" constant="16" id="fns-wx-U4Z"/>
+                            <constraint firstItem="SIi-ix-nOj" firstAttribute="top" secondItem="HXS-YU-IT7" secondAttribute="top" constant="125" id="ocj-Ga-eKa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="SegmentOutlet" destination="Ku6-Zn-UNN" id="dPS-9p-pdR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfS-R7-ar0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="0Rv-O3-kxR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="854.19847328244271" y="-343.66197183098592"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
