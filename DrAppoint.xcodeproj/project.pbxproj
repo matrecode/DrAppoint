@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1240E8C92B35728C00E1749D /* AdminLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1240E8C82B35728C00E1749D /* AdminLoginView.swift */; };
+		1240E8CB2B35729C00E1749D /* AdminLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1240E8CA2B35729C00E1749D /* AdminLoginVC.swift */; };
 		124CEAD72B34707A0086E1CB /* DoctorLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124CEAD62B34707A0086E1CB /* DoctorLoginVC.swift */; };
+		1287DF502B354F8500D84681 /* DrLoginSegmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1287DF4F2B354F8500D84681 /* DrLoginSegmentVC.swift */; };
+		1287DF522B355D9A00D84681 /* DrRegisterSegmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1287DF512B355D9A00D84681 /* DrRegisterSegmentVC.swift */; };
+		1287DF552B355F2E00D84681 /* FieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1287DF542B355F2D00D84681 /* FieldExtension.swift */; };
 		1295043C2B342F9C008554CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295043B2B342F9C008554CE /* AppDelegate.swift */; };
 		1295043E2B342F9C008554CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295043D2B342F9C008554CE /* SceneDelegate.swift */; };
 		129504402B342F9C008554CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295043F2B342F9C008554CE /* ViewController.swift */; };
@@ -38,7 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1240E8C82B35728C00E1749D /* AdminLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginView.swift; sourceTree = "<group>"; };
+		1240E8CA2B35729C00E1749D /* AdminLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginVC.swift; sourceTree = "<group>"; };
 		124CEAD62B34707A0086E1CB /* DoctorLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorLoginVC.swift; sourceTree = "<group>"; };
+		1287DF4F2B354F8500D84681 /* DrLoginSegmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrLoginSegmentVC.swift; sourceTree = "<group>"; };
+		1287DF512B355D9A00D84681 /* DrRegisterSegmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrRegisterSegmentVC.swift; sourceTree = "<group>"; };
+		1287DF542B355F2D00D84681 /* FieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldExtension.swift; sourceTree = "<group>"; };
 		129504382B342F9C008554CE /* DrAppoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrAppoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1295043B2B342F9C008554CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1295043D2B342F9C008554CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +90,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1240E8C32B35724300E1749D /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				1240E8C52B35725300E1749D /* User */,
+				1240E8C42B35724C00E1749D /* Admin */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		1240E8C42B35724C00E1749D /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				1240E8C72B35726A00E1749D /* Controller */,
+				1240E8C62B35726300E1749D /* Views */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		1240E8C52B35725300E1749D /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		1240E8C62B35726300E1749D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1240E8C82B35728C00E1749D /* AdminLoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1240E8C72B35726A00E1749D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1240E8CA2B35729C00E1749D /* AdminLoginVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		124CEAD42B3451B50086E1CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,8 +142,18 @@
 			isa = PBXGroup;
 			children = (
 				124CEAD62B34707A0086E1CB /* DoctorLoginVC.swift */,
+				1287DF4F2B354F8500D84681 /* DrLoginSegmentVC.swift */,
+				1287DF512B355D9A00D84681 /* DrRegisterSegmentVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1287DF532B355F0800D84681 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1287DF542B355F2D00D84681 /* FieldExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		1295042F2B342F9C008554CE = {
@@ -118,6 +179,8 @@
 		1295043A2B342F9C008554CE /* DrAppoint */ = {
 			isa = PBXGroup;
 			children = (
+				1240E8C32B35724300E1749D /* Features */,
+				1287DF532B355F0800D84681 /* Extensions */,
 				124CEAD52B3451C00086E1CB /* Controllers */,
 				124CEAD42B3451B50086E1CB /* Model */,
 				1295043B2B342F9C008554CE /* AppDelegate.swift */,
@@ -280,10 +343,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1287DF552B355F2E00D84681 /* FieldExtension.swift in Sources */,
 				129504402B342F9C008554CE /* ViewController.swift in Sources */,
 				1295043C2B342F9C008554CE /* AppDelegate.swift in Sources */,
+				1287DF522B355D9A00D84681 /* DrRegisterSegmentVC.swift in Sources */,
+				1240E8CB2B35729C00E1749D /* AdminLoginVC.swift in Sources */,
 				124CEAD72B34707A0086E1CB /* DoctorLoginVC.swift in Sources */,
 				1295043E2B342F9C008554CE /* SceneDelegate.swift in Sources */,
+				1240E8C92B35728C00E1749D /* AdminLoginView.swift in Sources */,
+				1287DF502B354F8500D84681 /* DrLoginSegmentVC.swift in Sources */,
 				129504462B342F9C008554CE /* DrAppoint.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
