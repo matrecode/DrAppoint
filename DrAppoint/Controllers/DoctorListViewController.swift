@@ -13,17 +13,21 @@ class DoctorListViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupUI()
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupUI() {
+         // Create plus button
+         let plusButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
+         navigationItem.rightBarButtonItem = plusButton
+     }
+    
+    @objc private func plusButtonTapped() {
+        // Handle the plus button tap event
+        print("Plus button tapped")
     }
-    */
+    
+    
 
 }

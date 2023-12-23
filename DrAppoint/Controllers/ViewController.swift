@@ -49,7 +49,9 @@ class ViewController : UIViewController {
     @objc func doctorButtonTapped() {
         let doctorLoginVC = DoctorLoginViewController()
         let navigationController = UINavigationController(rootViewController: doctorLoginVC)
+        navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)
+        
       
         print(#function)
     }

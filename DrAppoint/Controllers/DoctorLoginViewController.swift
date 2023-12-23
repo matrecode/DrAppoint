@@ -78,7 +78,6 @@ class DoctorLoginViewController: UIViewController {
             if enteredUsername == dummyUsername && enteredPassword == dummyPassword {
                 // Successfully logged in, navigate to the new screen (replace it with your screen)
                 let doctorListViewController = DoctorListViewController()
-               
                 doctorListViewController.view.backgroundColor = .green
                 navigationController?.pushViewController(doctorListViewController, animated: true)
             } else {
