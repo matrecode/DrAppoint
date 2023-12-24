@@ -11,6 +11,9 @@
 		1240E8E22B36E3B000E1749D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1240E8E12B36E3B000E1749D /* ViewController.swift */; };
 		1240E8E42B36E6A500E1749D /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1240E8E32B36E6A500E1749D /* UserLoginViewController.swift */; };
 		1240E8E62B36FDF800E1749D /* DoctorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1240E8E52B36FDF800E1749D /* DoctorListViewController.swift */; };
+		128B03DC2B37ED970093576E /* AddDoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128B03DB2B37ED970093576E /* AddDoctorViewController.swift */; };
+		128B03DF2B37F3960093576E /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128B03DE2B37F3960093576E /* Doctor.swift */; };
+		128B03E12B37F4680093576E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128B03E02B37F4680093576E /* CoreDataManager.swift */; };
 		1295043C2B342F9C008554CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295043B2B342F9C008554CE /* AppDelegate.swift */; };
 		1295043E2B342F9C008554CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1295043D2B342F9C008554CE /* SceneDelegate.swift */; };
 		129504432B342F9C008554CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 129504412B342F9C008554CE /* Main.storyboard */; };
@@ -44,6 +47,9 @@
 		1240E8E12B36E3B000E1749D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1240E8E32B36E6A500E1749D /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 		1240E8E52B36FDF800E1749D /* DoctorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListViewController.swift; sourceTree = "<group>"; };
+		128B03DB2B37ED970093576E /* AddDoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDoctorViewController.swift; sourceTree = "<group>"; };
+		128B03DE2B37F3960093576E /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		128B03E02B37F4680093576E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		129504382B342F9C008554CE /* DrAppoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrAppoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1295043B2B342F9C008554CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1295043D2B342F9C008554CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +93,7 @@
 		1240E8D62B36B89900E1749D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				128B03DE2B37F3960093576E /* Doctor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -98,6 +105,7 @@
 				1240E8E12B36E3B000E1749D /* ViewController.swift */,
 				1240E8E32B36E6A500E1749D /* UserLoginViewController.swift */,
 				1240E8E52B36FDF800E1749D /* DoctorListViewController.swift */,
+				128B03DB2B37ED970093576E /* AddDoctorViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -129,6 +137,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		128B03DD2B37F0980093576E /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				128B03E02B37F4680093576E /* CoreDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		1295042F2B342F9C008554CE = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +168,7 @@
 		1295043A2B342F9C008554CE /* DrAppoint */ = {
 			isa = PBXGroup;
 			children = (
+				128B03DD2B37F0980093576E /* DataManager */,
 				1240E8D92B36B91900E1749D /* Resources */,
 				1240E8D82B36B8AA00E1749D /* Views */,
 				1240E8D72B36B8A000E1749D /* Controllers */,
@@ -313,9 +330,12 @@
 				1240E8E22B36E3B000E1749D /* ViewController.swift in Sources */,
 				1295043C2B342F9C008554CE /* AppDelegate.swift in Sources */,
 				1240E8E62B36FDF800E1749D /* DoctorListViewController.swift in Sources */,
+				128B03DC2B37ED970093576E /* AddDoctorViewController.swift in Sources */,
 				1240E8E02B36E38000E1749D /* DoctorLoginViewController.swift in Sources */,
+				128B03DF2B37F3960093576E /* Doctor.swift in Sources */,
 				1240E8E42B36E6A500E1749D /* UserLoginViewController.swift in Sources */,
 				1295043E2B342F9C008554CE /* SceneDelegate.swift in Sources */,
+				128B03E12B37F4680093576E /* CoreDataManager.swift in Sources */,
 				129504462B342F9C008554CE /* DrAppoint.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
