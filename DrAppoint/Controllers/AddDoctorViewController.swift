@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import CoreData
 
 class AddDoctorViewController: UIViewController {
+    var persistentContainer: NSPersistentContainer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,9 +87,21 @@ class AddDoctorViewController: UIViewController {
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelButtonTapped))
         navigationItem.leftBarButtonItem = cancelButton
     }
+    
     @objc private func saveButtonTapped() {
-        // Save data to Core Data
-   
+        guard let name = nameTextField.text,
+              let speciality = specialityTextField.text,
+              let phone = phoneNumberTextField.text else {
+            return
+        }
+
+        let newDoctor = Doctor(context: CoreDataManager.shared.persistentContainer.viewContext)
+        newDoctor.name = name
+        newDoctor.speciality = speciality
+        newDoctor.phone = phone
+        
+        CoreDataManager.shared.saveContext()
+        
         dismiss(animated: true, completion: nil)
     }
 

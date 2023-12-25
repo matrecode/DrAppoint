@@ -6,14 +6,25 @@
 //
 
 import UIKit
+import CoreData
 
-class DoctorListViewController: UIViewController {
-
+class DoctorListViewController: UIViewController{
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         setupUI()
+        let fetchRequest: NSFetchRequest<Doctor> = Doctor.fetchRequest()
+
+        do {
+            let doctors = try CoreDataManager.shared.persistentContainer.viewContext.fetch(fetchRequest)
+            for doctor in doctors {
+                print("Name: \(doctor.name ?? "N/A"), Speciality: \(doctor.speciality ?? "N/A"), Phone: \(doctor.phone ?? "N/A")")
+            }
+        } catch {
+            print("Error fetching doctors: \(error.localizedDescription)")
+        }
     }
     
 
@@ -25,6 +36,7 @@ class DoctorListViewController: UIViewController {
         navigationItem.rightBarButtonItems = [plusButton, editButton]
      }
     
+
     
     
     @objc private func plusButtonTapped() {
@@ -34,12 +46,12 @@ class DoctorListViewController: UIViewController {
         let navigationController = UINavigationController(rootViewController: addDoctorViewController)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)
-        print("Plus button tapped")
+//        print("Plus button tapped")
     }
     
     @objc private func editButtonTapped() {
         // Handle the plus button tap event
-        print("Edit button tapped")
+//        print("Edit button tapped")
     }
     
 
