@@ -1,4 +1,3 @@
-//
 //  AddDoctorViewController.swift
 //  DrAppoint
 //
@@ -10,6 +9,8 @@ import CoreData
 
 class AddDoctorViewController: UIViewController {
     var persistentContainer: NSPersistentContainer?
+    var onDoctorAdded: (() -> Void)?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +89,9 @@ class AddDoctorViewController: UIViewController {
         navigationItem.leftBarButtonItem = cancelButton
     }
     
+   
+    
+    
     @objc private func saveButtonTapped() {
         guard let name = nameTextField.text,
               let speciality = specialityTextField.text,
@@ -101,6 +105,7 @@ class AddDoctorViewController: UIViewController {
         newDoctor.phone = phone
         
         CoreDataManager.shared.saveContext()
+        onDoctorAdded?()
         
         dismiss(animated: true, completion: nil)
     }
