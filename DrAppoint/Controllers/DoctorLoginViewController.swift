@@ -39,6 +39,14 @@ class DoctorLoginViewController: UIViewController {
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
+    
+    private let cancelButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Cancel", for: .normal)
+        button.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
+        return button
+    }()
+
 
   
 
@@ -47,10 +55,12 @@ class DoctorLoginViewController: UIViewController {
         view.addSubview(usernameTextField)
         view.addSubview(passwordTextField)
         view.addSubview(loginButton)
+        view.addSubview(cancelButton)
 
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         loginButton.translatesAutoresizingMaskIntoConstraints = false
+        cancelButton.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             usernameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -63,38 +73,42 @@ class DoctorLoginViewController: UIViewController {
 
             loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+            
+            
+            cancelButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            cancelButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
         ])
     }
     
     @objc private func loginButtonTapped() {
-            // Dummy login logic for demonstration purposes
-            let dummyUsername = "Admin"
-            let dummyPassword = "Admin123"
+        // Dummy login logic for demonstration purposes
+        let dummyUsername = "Admin"
+        let dummyPassword = "Admin123"
 
-            guard let enteredUsername = usernameTextField.text, let enteredPassword = passwordTextField.text else {
-                return
-            }
-
-            if enteredUsername == dummyUsername && enteredPassword == dummyPassword {
-                // Successfully logged in, navigate to the new screen (replace it with your screen)
-                let doctorListViewController = DoctorListViewController()
-                doctorListViewController.view.backgroundColor = .green
-                navigationController?.pushViewController(doctorListViewController, animated: true)
-            } else {
-                // Show an alert or handle login failure
-                showAlert(message: "Invalid credentials")
-               
-            }
+        guard let enteredUsername = usernameTextField.text, let enteredPassword = passwordTextField.text else {
+            return
         }
 
-        private func showAlert(message: String) {
-            let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
+        if enteredUsername == dummyUsername && enteredPassword == dummyPassword {
+            // Successfully logged in, navigate to the new screen (replace it with your screen)
+            let doctorListViewController = DoctorListViewController()
+            doctorListViewController.view.backgroundColor = .green
+            navigationController?.pushViewController(doctorListViewController, animated: true)
+        } else {
+            // Show an alert or handle login failure
+            showAlert(message: "Invalid credentials")
+           
         }
+    }
+
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
     
+    @objc private func cancelButtonTapped(){
+        dismiss(animated: true, completion: nil)
+    }
     
-
-
-
 }

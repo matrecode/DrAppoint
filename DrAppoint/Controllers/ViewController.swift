@@ -58,7 +58,9 @@ class ViewController : UIViewController {
 
     @objc func userButtonTapped() {
         let userLoginVC = UserLoginViewController()
-        present(userLoginVC, animated: true)
+        let userNavigationController = UINavigationController(rootViewController: userLoginVC)
+        userNavigationController.modalPresentationStyle = .fullScreen
+        present(userNavigationController, animated: true)
         print(#function)
     }
 
