@@ -32,4 +32,22 @@ class CoreDataManager {
             }
         }
     }
+    
+    func fetchUniqueSpecialities() -> [String]? {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Doctor")
+        request.returnsObjectsAsFaults = false
+        request.propertiesToFetch = ["speciality"]
+        request.resultType = .dictionaryResultType
+
+        do {
+            if let results = try persistentContainer.viewContext.fetch(request) as? [[String: String]] {
+                let uniqueSpecialities = Set(results.compactMap { $0["speciality"] })
+                return Array(uniqueSpecialities)
+            }
+        } catch {
+            print("Error fetching unique specialities: \(error.localizedDescription)")
+        }
+
+        return nil
+    }
 }

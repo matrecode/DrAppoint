@@ -1,13 +1,16 @@
-
-
 import UIKit
 import CoreData
 
-class UserDrViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
+class UserDrViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate{
 
     private let tableView = UITableView()
     private var doctors: [Doctor] = []
+    private let pickerView = UIPickerView()
+    private var specialities: [String] = []
     let fetchRequest: NSFetchRequest<Doctor> = NSFetchRequest(entityName: "Doctor")
+    private var isPickerViewVisible = false
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +23,12 @@ class UserDrViewController: UIViewController , UITableViewDelegate, UITableViewD
         setupUI()
 
         view.addSubview(tableView)
-
         
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        
+        
+        fetchUniqueSpecialties()
         
         let fetchRequest: NSFetchRequest<Doctor> = Doctor.fetchRequest()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DoctorCell")
@@ -32,15 +39,16 @@ class UserDrViewController: UIViewController , UITableViewDelegate, UITableViewD
            } catch {
                print("Error fetching doctors: \(error.localizedDescription)")
            }
-
+       
+        fetchAllDoctors()
     }
     
     private func setupUI() {
          // Create plus button
-         let plusButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
-        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonTapped))
+        let filterButton = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterButtonTapped))
+//        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
 
-        navigationItem.rightBarButtonItems = [plusButton, editButton]
+        navigationItem.rightBarButtonItems = [filterButton]
      }
     
     
@@ -89,10 +97,53 @@ class UserDrViewController: UIViewController , UITableViewDelegate, UITableViewD
         return cell
     }
     
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedDoctor = doctors[indexPath.row]
         showDoctorDetails(doctor: selectedDoctor)
+    }
+    
+    private func fetchUniqueSpecialties() {
+        let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "Doctor")
+        fetchRequest.resultType = .dictionaryResultType
+        fetchRequest.propertiesToFetch = ["speciality"]
+        fetchRequest.returnsDistinctResults = true
+
+        do {
+            if let results = try CoreDataManager.shared.persistentContainer.viewContext.fetch(fetchRequest) as? [NSDictionary] {
+                specialities = results.compactMap { $0["speciality"] as? String }
+                specialities.insert("All", at: 0)
+            }
+        } catch {
+            print("Error fetching specialities: \(error.localizedDescription)")
+        }
+    }
+    
+    private func fetchAllDoctors() {
+        let fetchRequest: NSFetchRequest<Doctor> = Doctor.fetchRequest()
+
+        do {
+            doctors = try CoreDataManager.shared.persistentContainer.viewContext.fetch(fetchRequest)
+            tableView.reloadData()
+        } catch {
+            print("Error fetching doctors: \(error.localizedDescription)")
+        }
+    }
+    
+    private func fetchDoctorsWithSpecialty(_ specialty: String) {
+        let fetchRequest: NSFetchRequest<Doctor> = Doctor.fetchRequest()
+
+        if specialty != "All" {
+            fetchRequest.predicate = NSPredicate(format: "speciality == %@", specialty)
+        }
+
+        do {
+            doctors = try CoreDataManager.shared.persistentContainer.viewContext.fetch(fetchRequest)
+            tableView.reloadData()
+        } catch {
+            print("Error fetching doctors with specialty: \(error.localizedDescription)")
+        }
     }
     
     private func showDoctorDetails(doctor: Doctor) {
@@ -101,16 +152,63 @@ class UserDrViewController: UIViewController , UITableViewDelegate, UITableViewD
         navigationController?.pushViewController(doctorDetailsViewController, animated: true)
     }
     
-    
-    @objc func plusButtonTapped(){
-        
+    private func toggleDoneButtonVisibility() {
+        if isPickerViewVisible {
+            let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
+            navigationItem.rightBarButtonItem = doneButton
+        } else {
+            let filterButton = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterButtonTapped))
+            navigationItem.rightBarButtonItem = filterButton
+        }
     }
     
-    @objc func editButtonTapped(){
-        
+    private func showPickerView() {
+        // Add pickerView to the main view
+        pickerView.frame = CGRect(x: 0, y: view.frame.height - 216, width: view.frame.width, height: 216) // Adjust the frame as needed
+        view.addSubview(pickerView)
+
+        isPickerViewVisible = true
+        toggleDoneButtonVisibility()
+
     }
+
+    @objc func doneButtonTapped() {
+        // Handle done button action
+        pickerView.removeFromSuperview()
+
+        isPickerViewVisible = false
+        toggleDoneButtonVisibility()
     }
+
+    @objc func filterButtonTapped() {
+        showPickerView()
+    }
+
+
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return specialities.count
+    }
+
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return specialities[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let selectedSpecialty = specialities[row]
+        fetchDoctorsWithSpecialty(selectedSpecialty)
+    }
+    
+    
+    
+}
     
  
+
 
 
