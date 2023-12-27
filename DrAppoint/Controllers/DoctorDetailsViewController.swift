@@ -26,6 +26,14 @@ class DoctorDetailsViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    private let appointmentButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Schedule Appointment", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(appointmentButtonTapped), for: .touchUpInside)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +47,7 @@ class DoctorDetailsViewController: UIViewController {
         view.addSubview(nameLabel)
         view.addSubview(specialityLabel)
         view.addSubview(numberLabel)
+        view.addSubview(appointmentButton)
 
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
@@ -49,6 +58,10 @@ class DoctorDetailsViewController: UIViewController {
             
             numberLabel.topAnchor.constraint(equalTo: specialityLabel.bottomAnchor, constant: 8),
             numberLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            
+            appointmentButton.topAnchor.constraint(equalTo: numberLabel.bottomAnchor, constant: 16),
+            appointmentButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
         ])
     }
 
@@ -62,5 +75,11 @@ class DoctorDetailsViewController: UIViewController {
         numberLabel.text = "Number: \(doctor.phone ?? "N/A")"
 
  
+    }
+    
+    @objc private func appointmentButtonTapped() {
+        let appointmentDetailsVC = AppointmentDetailsViewController()
+        appointmentDetailsVC.doctor = doctor
+        navigationController?.pushViewController(appointmentDetailsVC, animated: true)
     }
 }
