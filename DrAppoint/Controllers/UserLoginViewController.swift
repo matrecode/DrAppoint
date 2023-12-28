@@ -10,7 +10,19 @@ class UserLoginViewController: UIViewController {
         self.view.backgroundColor = .white
         // Do any additional setup after loading the view.
         setupUI()
+        updateUIForCurrentState()
        
+    }
+    
+    private enum ViewState {
+        case register
+        case login
+    }
+
+    private var currentState: ViewState = .register {
+        didSet {
+            updateUIForCurrentState()
+        }
     }
     
     private let usernameTextField: UITextField = {
@@ -28,10 +40,9 @@ class UserLoginViewController: UIViewController {
         return textField
     }()
 
-    private let loginButton: UIButton = {
+    private let actionButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Login", for: .normal)
-        button.addTarget(self, action: #selector(userLoginButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -43,58 +54,86 @@ class UserLoginViewController: UIViewController {
     }()
     
     private func setupUI() {
-        // Add and layout UI elements
         view.addSubview(usernameTextField)
         view.addSubview(passwordTextField)
-        view.addSubview(loginButton)
+        view.addSubview(actionButton)
         view.addSubview(cancelButton)
-        
+
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
         cancelButton.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             usernameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             usernameTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
             usernameTextField.widthAnchor.constraint(equalToConstant: 200),
-            
+
             passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             passwordTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 20),
             passwordTextField.widthAnchor.constraint(equalToConstant: 200),
-            
-            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
-            
-            
+
+            actionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            actionButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+
             cancelButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            cancelButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
+            cancelButton.topAnchor.constraint(equalTo: actionButton.bottomAnchor, constant: 20),
         ])
-        
-        
-        
     }
     
-    @objc private func userLoginButtonTapped() {
-        // Dummy login logic for demonstration purposes
-        let dummyUsername = "Admin"
-        let dummyPassword = "Admin123"
+//    @objc private func userLoginButtonTapped() {
+//        // Dummy login logic for demonstration purposes
+//        let dummyUsername = "Admin"
+//        let dummyPassword = "Admin123"
+//
+//        guard let enteredUsername = usernameTextField.text, let enteredPassword = passwordTextField.text else {
+//            return
+//        }
+//
+//        if enteredUsername == dummyUsername && enteredPassword == dummyPassword {
+//            // Successfully logged in, navigate to the new screen (replace it with your screen)
+//            let userDrListVC = UserDrViewController()
+//            userDrListVC.view.backgroundColor = .green
+//            navigationController?.pushViewController(userDrListVC, animated: true)
+//        } else {
+//            // Show an alert or handle login failure
+//            showAlert(message: "Invalid credentials")
+//           
+//        }
+//    }
+    
+    private func updateUIForCurrentState() {
+        switch currentState {
+        case .register:
+            actionButton.setTitle("Register", for: .normal)
+        case .login:
+            actionButton.setTitle("Login", for: .normal)
+        }
+    }
 
-        guard let enteredUsername = usernameTextField.text, let enteredPassword = passwordTextField.text else {
+    @objc private func actionButtonTapped() {
+        guard let enteredUsername = usernameTextField.text,
+              let enteredPassword = passwordTextField.text else {
             return
         }
 
-        if enteredUsername == dummyUsername && enteredPassword == dummyPassword {
-            // Successfully logged in, navigate to the new screen (replace it with your screen)
-            let userDrListVC = UserDrViewController()
-            userDrListVC.view.backgroundColor = .green
-            navigationController?.pushViewController(userDrListVC, animated: true)
-        } else {
-            // Show an alert or handle login failure
-            showAlert(message: "Invalid credentials")
-           
+        switch currentState {
+        case .register:
+            CoreDataManager.shared.registerUser(username: enteredUsername, password: enteredPassword)
+            showAlert(message: "User registered successfully")
+            currentState = .login
+        case .login:
+            if CoreDataManager.shared.authenticateUser(username: enteredUsername, password: enteredPassword) {
+                // Successfully logged in, navigate to the new screen (replace it with your screen)
+                let userDrListVC = UserDrViewController()
+                userDrListVC.view.backgroundColor = .green
+                navigationController?.pushViewController(userDrListVC, animated: true)
+            } else {
+                showAlert(message: "Invalid credentials")
+            }
         }
     }
+
     
     private func showAlert(message: String) {
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)

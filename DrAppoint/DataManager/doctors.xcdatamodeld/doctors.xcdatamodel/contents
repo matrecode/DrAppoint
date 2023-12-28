@@ -5,4 +5,8 @@
         <attribute name="phone" optional="YES" attributeType="String"/>
         <attribute name="speciality" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="UsersModel" representedClassName="UsersModel" syncable="YES" codeGenerationType="class">
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+    </entity>
 </model>

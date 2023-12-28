@@ -50,4 +50,25 @@ class CoreDataManager {
 
         return nil
     }
+    
+    func registerUser(username: String, password: String) {
+        let context = persistentContainer.viewContext
+        let newUser = UsersModel(context: context)
+        newUser.username = username
+        newUser.password = password
+        saveContext()
+    }
+
+    func authenticateUser(username: String, password: String) -> Bool {
+        let request = NSFetchRequest<UsersModel>(entityName: "UsersModel")
+        request.predicate = NSPredicate(format: "username == %@ AND password == %@", username, password)
+
+        do {
+            let users = try persistentContainer.viewContext.fetch(request)
+            return !users.isEmpty
+        } catch {
+            print("Error authenticating user: \(error.localizedDescription)")
+            return false
+        }
+    }
 }
