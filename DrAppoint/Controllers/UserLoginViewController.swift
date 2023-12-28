@@ -1,7 +1,6 @@
-
-
 import Foundation
 import UIKit
+import CoreData
 
 class UserLoginViewController: UIViewController {
 
@@ -11,12 +10,11 @@ class UserLoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupUI()
         updateUIForCurrentState()
-       
     }
     
-    private enum ViewState {
-        case register
-        case login
+    private enum ViewState: Int {
+        case register = 0
+        case login = 1
     }
 
     private var currentState: ViewState = .register {
@@ -53,20 +51,33 @@ class UserLoginViewController: UIViewController {
         return button
     }()
     
+    private let segmentedControl: UISegmentedControl = {
+        let items = ["Register", "Login"]
+        let segmentedControl = UISegmentedControl(items: items)
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+        return segmentedControl
+    }()
+    
     private func setupUI() {
+        view.addSubview(segmentedControl)
         view.addSubview(usernameTextField)
         view.addSubview(passwordTextField)
         view.addSubview(actionButton)
         view.addSubview(cancelButton)
 
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         cancelButton.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
+            segmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            
             usernameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            usernameTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
+            usernameTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
             usernameTextField.widthAnchor.constraint(equalToConstant: 200),
 
             passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -81,26 +92,9 @@ class UserLoginViewController: UIViewController {
         ])
     }
     
-//    @objc private func userLoginButtonTapped() {
-//        // Dummy login logic for demonstration purposes
-//        let dummyUsername = "Admin"
-//        let dummyPassword = "Admin123"
-//
-//        guard let enteredUsername = usernameTextField.text, let enteredPassword = passwordTextField.text else {
-//            return
-//        }
-//
-//        if enteredUsername == dummyUsername && enteredPassword == dummyPassword {
-//            // Successfully logged in, navigate to the new screen (replace it with your screen)
-//            let userDrListVC = UserDrViewController()
-//            userDrListVC.view.backgroundColor = .green
-//            navigationController?.pushViewController(userDrListVC, animated: true)
-//        } else {
-//            // Show an alert or handle login failure
-//            showAlert(message: "Invalid credentials")
-//           
-//        }
-//    }
+    @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        currentState = ViewState(rawValue: sender.selectedSegmentIndex) ?? .register
+    }
     
     private func updateUIForCurrentState() {
         switch currentState {
@@ -119,11 +113,11 @@ class UserLoginViewController: UIViewController {
 
         switch currentState {
         case .register:
-            CoreDataManager.shared.registerUser(username: enteredUsername, password: enteredPassword)
+            registerUser(username: enteredUsername, password: enteredPassword)
             showAlert(message: "User registered successfully")
-            currentState = .login
+           
         case .login:
-            if CoreDataManager.shared.authenticateUser(username: enteredUsername, password: enteredPassword) {
+            if authenticateUser(username: enteredUsername, password: enteredPassword) {
                 // Successfully logged in, navigate to the new screen (replace it with your screen)
                 let userDrListVC = UserDrViewController()
                 userDrListVC.view.backgroundColor = .green
@@ -134,16 +128,44 @@ class UserLoginViewController: UIViewController {
         }
     }
 
-    
     private func showAlert(message: String) {
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     
-    @objc private func userCancelButtonTapped(){
+    @objc private func userCancelButtonTapped() {
         dismiss(animated: true, completion: nil)
     }
 
 
+    private func registerUser(username: String, password: String) {
+       
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let newUser = UsersModel(context: context)
+        newUser.username = username
+        newUser.password = password
+
+        do {
+            try context.save()
+        } catch {
+            print("Error saving user: \(error)")
+        }
+    }
+
+    private func authenticateUser(username: String, password: String) -> Bool {
+        // Replace with your CoreData logic to authenticate user
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let request = NSFetchRequest<UsersModel>(entityName: "UsersModel")
+        request.predicate = NSPredicate(format: "username == %@ AND password == %@", username, password)
+
+        do {
+            let users = try context.fetch(request)
+            return !users.isEmpty
+        } catch {
+            print("Error fetching user: \(error)")
+            return false
+        }
+    }
 }
+
